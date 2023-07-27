@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SloganCreator</title>
+<title>AliviaDoencas</title>
 <link rel="icon" href="https://bohr.io/favicon.ico">
 <style type="text/css">
 *, :before, :after {box-sizing:border-box;margin:0;padding:0;border:0;}
 body {
-  background: linear-gradient(180deg, #20333E 0%, #0E171D 33%);
+  background: linear-gradient(180deg, #0fa7ff 0%, #eb1818 33%);
 }
 h1{
   font:48px Helvetica, Arial, sans-serif;
@@ -32,17 +32,17 @@ input[type="text"] {
   max-width:880px;
   height: 76px;
   margin:64px auto 16px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.5);
   border: 1px solid #rgba(0,0,0,0.1);
   border-radius: 8px;
-  color:rgb(241,241,241,0.4);
+  color:rgb(241,241,241,0.9);
   font:32px/76px Helvetica, Arial, sans-serif;
   text-align:center;
   letter-spacing:-2px;
   outline:none;
 }
 input[type="text"]:focus {
-  color:#FFF;
+  color:#000000;
   border:solid 1px #55DDE0;
 }
 input[type="submit"] {
@@ -135,16 +135,16 @@ input[type="submit"]:focus{
       }
       document.getElementById('prompt').style.border = 'none';
       document.getElementById('result').innerText = 'carregando...';
-      const response = await fetch("/api?prompt=Sugira um slogan para " + document.getElementById('prompt').value, {
+      const response = await fetch("/api?prompt=Crie um poema em html para quem esta com " + document.getElementById('prompt').value, {
         method: "GET",
       });
-
+      
       const data = await response.json();
       if (response.status !== 200) {
         throw data.error || new Error(`Request failed with status ${response.status}`);
       }
 
-      document.getElementById('result').innerText = data.result.replace( /([\n])|/g, '' ).replace( /"$/, '' ).replace( /^"/, '' );
+      document.getElementById('result').innerHTML = data.result.replace( /([\n])|/g, '' ).replace( /"$/, '' ).replace( /^"/, '' );
     } catch(error) {
       console.error(error);
       alert(error.message);
@@ -154,13 +154,13 @@ input[type="submit"]:focus{
 </head>
 <body>
   <form onsubmit="onSubmit(event)">
-    <h1>SloganCreator</h1>
-    <p>uses OpenAI - GTP3 and is powered by bohr.io</p>
-    <input type="text" id="prompt" value="" placeholder="plataforma de deploy serverless" />
-    <input type="submit" value="Create Slogan" />
+    <h1>Alivia Sintomas</h1>
+    <p>Os médicos mais inspirados irão solucionar seu problema</p>
+    <input type="text" id="prompt" value="" placeholder="Ex: Azia, Dor de barriga, Perna quebrada..." />
+    <input type="submit" value="Alivie meus sintomas" />
   </form>
   <div id="result_wrapper">
-    <div id="result">Liberte-se do deploy tradicional: Serverless é o novo jeito!</div>
+    <div id="result">Soluções artísticas para seu sintoma</div>
   </div>
   <div id="brands">
     <a href="https://github.com/bohr-io/openai-template" target="_blank">
