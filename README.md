@@ -1,6 +1,11 @@
-# SloganCreator
+# Alivia Sintoma
 
-Este projeto gera slogans usando IA!
+![image](https://github.com/tripaca/conselho-inutil/assets/78231371/3fe0e2a6-3aa1-45c6-8fd7-e263591538c6)
+
+<center>
+<img src="https://github.com/tripaca/conselho-inutil/assets/78231371/765e1186-fae4-4955-ac0d-9550b3e62a4b" width="300"> </center>
+
+Este projeto soluciona seus sintomas!
 
 ## Como funciona?
 
